@@ -1,0 +1,81 @@
+Dalvik Virtual Machine Instructions
+-------------------------------------------------------------
+1.
+	a)Instruction Name: Moves the content of vy into vx. Both registers must be in the first 256 register range.
+	
+	b)Syntax: move vx,vy
+	
+	c)Example: 0110 - move v0, v1
+			   Moves v1 into v0.
+			   
+			  
+2.
+	a)Instruction Name: Return with vx return value
+	
+	b)Syntax: return vx
+	
+	c)Example: 0F00 - return v0
+			   Returns with return value in v0.
+			   
+			   
+3.
+	a)Instruction Name: Instantiates an object type and puts the reference of the newly created instance into vx.
+	
+	b)Syntax: new-instance vx,type
+	
+	c)Example: 2200 1500 - new-instance v0, java.io.FileInputStream // type@0015
+               Instantiates type@0015 (entry #15H in the type table) and puts its reference into v0.
+			   
+			   
+4.
+	a)Instruction Name: Throws an exception object. The reference of the exception object is in vx
+	
+	b)Syntax: throw vx
+	
+	c)Example: 2700 - throw v0
+			   Throws an exception. The exception object reference is in v0.
+			   
+			   
+5.
+	a)Instruction Name: Unconditional jump by short offset.
+	
+	b)Syntax: goto target
+	
+	c)Example: 28F0 - goto 0005 // -0010
+			   Jumps to current position-16 words (hex 10). 0005 is the label of the target instruction.
+			   
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Example for an application simulating context-aware computing:
+---------------------------------------------------------------------
+
+Application Name: WiFi Chat , an Android mobile application.
+
+Justification:  Wi-Fi proximity is the main idea behind Wi-Fi chat. If two users can see the same Wi-Fi access point (Wi-Fi network) then it is very
+                probable that both can see each other. In other words, it is very likely that both are close to each other. Close in the geographical sense, of course.So, WiFiChat lets them create discussions (forums) as well as live web chats associated with Wi-Fi access points.  
+                
+
+Differences between Mobile and Cloud computing:
+---------------------------------------------------------------------
+
+S.No		Mobile computing															Cloud computing
+-------------------------------------------------------------------------------------------------------
+
+1.          Mobile computing is human–computer                                   Cloud computing is an expression used to describe
+		    interaction by which a computer is                                   a variety of computing concepts that involve a large
+			expected to be transported during                                    number of computers connected through a real-time
+			normal usage.                                                        communication network such as the Internet.
+			
+2.          It involves a physical device                                        It is a service which can be used with the help of a
+			that is capable of certain computing                                 physical device with internet access to access it.
+			capabilities.
+			
+3.          Information can be lost if any damage								 Information can never be lost if its stored on cloud 
+			happens to the physical device.								         even if any damage happens to the physical device.
+			
+4.          It is fast in the sense that everything 							 It is comparatively slow because the information needs to 
+			is available in hand.												 be accessed from the cloud using internet.
+			
+5.          It minimizes the cost by reducing user								 It minimizes the cost by using virtualization.
+			interactions.
+			
